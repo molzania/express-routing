@@ -38,5 +38,15 @@ module.exports = {
       message: "berhasil menghapus data hewan by id",
       data: hewan
     })
+  },
+
+  updateHewanByID: (req,res) => {
+    const {id, newAddHewan} = req.params
+    const hewan = hewans.findOneAndUpdate({ _id: id }, {$set: newAddHewan}, ...)
+    res.json ( {
+      message: "berhasil mengupdate data hewan by id",
+      data: hewan
+    }
+    )
   }
 }
